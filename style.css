@@ -1,0 +1,273 @@
+:root {
+  /* Color */
+  --orange-color: orange;
+  --beige-color: beige;
+  --black-color: black;
+  --tan-color: tan;
+  --grey-dark-color: #909090;
+  --grey-light-color: #e0e0e0;
+  --blue-color: #045fd4;
+
+  /* Size */
+  --padding: 12px;
+  --avatar-size: 36px;
+  --img-width: 250px;
+  --img-height: 150px;
+
+  /* Font Size */
+  --font-large: 18px;
+  --font-medium: 14px;
+  --font-small: 12px;
+  --font-micro: 10px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Mochiy Pop P One", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+i,
+button {
+  background-color: white;
+}
+
+button,
+button:focus {
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Header */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding);
+  background-color: var(--beige-color);
+  color: var(--black-color);
+}
+
+header .logo {
+  font-size: var(--font-large);
+  color: var(--black-color);
+}
+
+header .logo i {
+  color: var(--orange-color);
+  background-color: var(--beige-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--black-color);
+}
+
+header .icons .fa-search {
+  margin-right: var(--padding);
+}
+
+/* SASS & LESS 
+이런식으로 묶어서 가능함 나중에 배움
+header {
+    .logo {
+
+    }
+    .icons{
+
+    }
+
+} */
+
+/* Video */
+
+.player {
+  position: sticky;
+  /* sticky를 사용했으면 어디위치에 지정하는지까지 정해줘야함 */
+  top: 0;
+  text-align: center;
+  background-color: var(--black-color);
+}
+
+.player video {
+  width: 100%;
+  height: 100%;
+  max-width: 250px;
+}
+
+body > .info {
+  padding: var(--padding);
+}
+
+.info .matadata .hashtags {
+  display: flex;
+  font-size: var(--font-small);
+  color: var(--blue-color);
+}
+
+.info .matadata .hashtags li {
+  margin-right: var(--padding);
+}
+
+.info .matadata .titleAndButton {
+  display: flex;
+}
+
+.info .matadata .titleAndButton .title {
+  font-size: var(--font-medium);
+
+  /* title 줄 수를 2줄로 제한 */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  margin-right: var(--padding);
+}
+
+.info .metadata .titleAndButton .moreBtn {
+  height: 100%;
+}
+
+.info .views {
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+
+/* actions */
+
+.info .actions {
+  display: flex;
+  justify-content: space-around;
+  margin: var(--padding) 0;
+}
+
+.info .actions button {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-small);
+  color: var(--black-color);
+  background-color: white;
+}
+
+.info .actions button i {
+  margin: 0 auto;
+  margin-bottom: calc(var(--padding) / 2);
+  font-size: 16px;
+}
+
+.info .actions button i.active {
+  color: var(--blue-color);
+}
+
+/* Channel */
+
+.info .channel {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--grey-light-color);
+  border-bottom: 1px solid var(--grey-light-color);
+}
+
+.info .channel .metadata {
+  display: flex;
+  align-items: center;
+}
+
+.info .channel .metadata .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.info .channel .metadata img {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%;
+}
+
+.info .channel .metadata .info .name {
+  font-size: var(--font-medium);
+}
+
+.info .channel .metadata .info .subscribers {
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+
+.info .channel .subscribe {
+  /* 대문자 uppercase */
+  text-transform: uppercase;
+  color: red;
+  font-size: var(--font-medium);
+}
+
+/* List */
+
+.list {
+  padding: 0 var(--padding);
+}
+
+.list > .title {
+  font-size: var(--font-medium);
+  color: var(--grey-dark-color);
+  margin-bottom: calc(var(--padding) / 2);
+}
+
+.list .item {
+  display: flex;
+}
+
+.list .item .info {
+  flex: 1 1 60%;
+}
+
+.list .item .img {
+  flex: 1 1 35%;
+  margin-right: var(--padding);
+}
+
+.list .item .img img {
+  width: 100%;
+  max-height: 200px;
+}
+
+.list .item .moreBtn {
+  height: 100%;
+  flex: 1 1 5%;
+}
+
+.list .item .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.list .item .info .title {
+  font-size: var(--font-small);
+}
+
+.list .item .info .name,
+.ilst .item .info .views {
+  font-size: var(--font-micro);
+  color: var(--grey-dark-color);
+}
+
+.infoAndUpnext {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .infoAndUpnext {
+    flex-direction: row;
+    margin: var(--padding) 0;
+  }
+}
